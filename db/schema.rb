@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112215948) do
+ActiveRecord::Schema.define(version: 20151112220546) do
 
   create_table "polls", force: :cascade do |t|
     t.string   "title",      null: false
-    t.string   "user_id",    null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
