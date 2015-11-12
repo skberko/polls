@@ -22,7 +22,7 @@ class AnswerChoice < ActiveRecord::Base
     foreign_key: :answer_choice_id,
     primary_key: :id #refers to answer_choices.id
 
-  has_many :users,
+  has_many :respondents,
     through: :responses,
     source: :respondent
 end
