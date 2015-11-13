@@ -21,4 +21,8 @@ class Question < ActiveRecord::Base
     class_name: "AnswerChoice",
     foreign_key: :question_id,
     primary_key: :id # refers to question.id
+
+  has_many :responses,
+    through: :answer_choices,
+    source: :responses
 end

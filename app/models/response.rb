@@ -21,4 +21,12 @@ class Response < ActiveRecord::Base
     class_name: "User",
     foreign_key: :user_id,
     primary_key: :id #refers to user.id
+
+  has_one :question,
+    through: :answer_choice,
+    source: :question
+
+  def sibling_responses
+    self.question.responses.where("responsed.id IS NOT NULL OR responses.id != ?", self.id)
+  end
 end
